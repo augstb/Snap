@@ -140,6 +140,18 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.5.1</version>
+                <configuration>
+                    <relocations>
+                        <relocation>
+                            <pattern>net.kyori.adventure.text.serializer.gson</pattern>
+                            <shadedPattern>de.themoep.snap.libs.adventure.serializer.gson</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>net.kyori.adventure.text.serializer.bungeecord</pattern>
+                            <shadedPattern>de.themoep.snap.libs.adventure.serializer.bungeecord</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>
